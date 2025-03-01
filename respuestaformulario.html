@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mostrando respuesta y reedireccionando</title>
+    <meta http-equiv="refresh" content="7; contacto.html">
+</head>
+<body>
+    <div>
+        <h1>¡Gracias por ponerte en contacto con nosotros!</h1>
+        <p>Serás redirigido a la página anterior en <span id="countdown">7</span> segundos...</p>
+    </div>
+    <script>
+        
+        let seconds = 7;
+        const countdownElement = document.getElementById("countdown");
+
+        const countdown = setInterval(() => {
+            seconds--;
+            countdownElement.textContent = seconds;
+            if (seconds <= 0) {
+                clearInterval(countdown);
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
